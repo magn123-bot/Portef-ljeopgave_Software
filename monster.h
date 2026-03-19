@@ -6,10 +6,10 @@
 class Monster {
 public:
     Monster(std::string name, int hp, int damage);
-    void Attack();
-    void takedamage();
-    bool isalive();
-    
+    void attack();
+    void takeDamage();
+    bool isAlive();
+
 private:
     std::string name;
     int hp;
