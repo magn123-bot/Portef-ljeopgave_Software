@@ -6,7 +6,7 @@
 class Monster {
 public:
     Monster(std::string name, int hp, int damage);
-    void attack();
+    void attack(Monster& target);
     void takeDamage();
     bool isAlive();
 
