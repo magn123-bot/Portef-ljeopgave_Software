@@ -8,6 +8,7 @@ public:
     Monster(std::string name, int hp, int damage);
     void attack(Monster& target);
     void takeDamage(int damage);
+    void getStatus();
     bool isAlive();
 
 private:
