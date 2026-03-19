@@ -9,19 +9,23 @@ Monster::Monster(std::string name, int hp, int damage){
 
 void Monster::attack(Monster& target){
     if (&target == this){
-        std::cout<< "The monster cant attack its self"<< std::endl;
         return;
     } if (!isAlive){
-        std::cout<< "The monster is already dead"<< std::endl;
+        return;
     } 
     target.takeDamage(damage);
-    std::cout<<"You made"<< damage<< "damage"<<std::endl;
-}
-
-void Monster::takeDamage(int damage){
     
 }
 
-bool Monster::isAlive(){
+void Monster::takeDamage(int damage){
+    hp -= damage;
+    if (hp < 0){
+        hp = 0;
+    }
+}
 
+bool Monster::isAlive(){
+    if (hp == 0){
+        return false;
+    } return true;
 }
