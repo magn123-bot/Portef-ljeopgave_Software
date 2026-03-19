@@ -13,11 +13,13 @@ void Monster::attack(Monster& target){
         return;
     } if (!isAlive){
         std::cout<< "The monster is already dead"<< std::endl;
-    } target.takeDamage(damage);
-}   
+    } 
+    target.takeDamage(damage);
+    std::cout<<"You made"<< damage<< "damage"<<std::endl;
+}
 
-void Monster::takeDamage(){
-
+void Monster::takeDamage(int damage){
+    
 }
 
 bool Monster::isAlive(){
