@@ -25,7 +25,7 @@ void Monster::takeDamage(int damage){
 }
 
 void Monster::getStatus(){
-    if (!isAlive){
+    if (!isAlive()){
         std::cout<< name<< "Is dead"<< std::endl;
     }
     std::cout<< name << " | HP:"<< hp<< std::endl;
