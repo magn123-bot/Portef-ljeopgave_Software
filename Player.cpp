@@ -7,7 +7,9 @@ Player::Player(std::string name){
 
 }
 void Player::checkMonsters(){
-
+    for (Monster i : monsters){
+        std::cout<< i.getName()<< std::endl;
+    }
 }
 
 void Player::removeMonster(Monster m){

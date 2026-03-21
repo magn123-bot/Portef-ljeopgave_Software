@@ -12,6 +12,7 @@ public:
     void addMonster(Monster m);
 private:
         std::vector<Monster> monsters;
+        std::string name;
 
 };
 #endif
