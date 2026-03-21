@@ -10,6 +10,7 @@ public:
     void takeDamage(int damage);
     void getStatus();
     bool isAlive();
+    std::string getName();
 
 private:
     std::string name;

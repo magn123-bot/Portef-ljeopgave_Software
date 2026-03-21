@@ -35,3 +35,8 @@ void Monster::getStatus(){
 bool Monster::isAlive(){
     return hp > 0;
 }
+
+
+std::string Monster::getName(){
+    return name;
+}
