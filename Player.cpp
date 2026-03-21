@@ -11,7 +11,12 @@ void Player::checkMonsters(){
 }
 
 void Player::removeMonster(Monster m){
-    
+    for (Monster i : monsters){
+        if (i.getName() == m.getName()){
+            monsters.erase(i);
+        }
+    }
+
 }
 
 void Player::addMonster(Monster m){
