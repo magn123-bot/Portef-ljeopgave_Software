@@ -11,9 +11,9 @@ void Player::checkMonsters(){
 }
 
 void Player::removeMonster(Monster m){
-    for (Monster i : monsters){
-        if (i.getName() == m.getName()){
-            monsters.erase(i);
+    for (int i{}; i < monsters.size(); i++){
+        if (monsters[i].getName() == m.getName()){
+            monsters.erase(monsters.begin() + i);
         }
     }
 
@@ -23,3 +23,4 @@ void Player::addMonster(Monster m){
     monsters.push_back(m);
 
 }
+
