@@ -8,7 +8,7 @@ Monster::Monster(std::string name, int hp, int damage){
 void Monster::attack(Monster& target){
     if (&target == this){
         return;
-    } if (!isAlive){
+    } if (!isAlive()){
         return;
     } 
     target.takeDamage(damage);
