@@ -1,9 +1,8 @@
 #include "Monster.h"
 #include <iostream>
 
-Monster::Monster(std::string name, int hp, int damage){
-    
-}
+Monster::Monster(std::string name, int hp, int damage)
+    : name(name), hp(hp), damage(damage) {}
 
 void Monster::attack(Monster& target){
     if (&target == this){
