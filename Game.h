@@ -13,11 +13,14 @@ public:
 private:
     void startGame();
     void stopGame();
+    void chooseenemy();
     void fight();
     Player player;
     bool running = true;
     void Game::enemies();
     std::vector<Monster> availableMonsters;
+    Monster enemy;
+
 };
 
 
