@@ -1,5 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
+#include "Player.h"
 
 #include <string>
 
@@ -10,6 +11,8 @@ private:
     void startGame();
     void stopGame();
     void fight();
+    Player player;
+    bool running = true;
 };
 
 
