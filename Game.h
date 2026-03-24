@@ -13,7 +13,7 @@ public:
 private:
     void startGame();
     void stopGame();
-    Monster chooseenemy();
+    Monster& chooseenemy();
     void fight();
     Player player;
     bool running = true;
