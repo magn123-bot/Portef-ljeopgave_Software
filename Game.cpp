@@ -37,3 +37,11 @@ void Game::chooseenemy(){
     enemy = availableMonsters[index];
 
 }
+
+
+
+
+void Game::fight(){
+    
+    std::cout<< "choose "
+}
