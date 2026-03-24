@@ -10,6 +10,7 @@ public:
     void checkMonsters();
     void removeMonster(Monster m);
     void addMonster(Monster m);
+    Monster& chooseMonster();
 private:
         std::vector<Monster> monsters;
         std::string name;
