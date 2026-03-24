@@ -27,18 +27,25 @@ void Game::enemies(){
     {"Drage", 100, 10}};
 }
 
-void Game::chooseenemy(){
+Monster Game::chooseenemy(){
     int index;
     std::cout<< "Choose a monster to fight"<< std::endl;
     for (int i{}; i < availableMonsters.size(); i++){
         availableMonsters[i].getStatus();
     }    
     std::cin>> index;
-    enemy = availableMonsters[index];
+    Monster enemy = availableMonsters[index];
+    return enemy;
 
 }
 
+void Game::playerTurn(){
+    
+}
 
+void Game::enemyTurn(){
+
+}
 
 
 void Game::fight(){
