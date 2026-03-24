@@ -26,3 +26,19 @@ void Player::addMonster(Monster m){
 
 }
 
+Monster& Player::chooseMonster(){
+    checkMonsters();
+    while (true) {
+    std::cout<< "Choose a monster to fight: "<< std::endl;
+    std::string choice;
+    std::cin>> choice;
+ 
+    for (int i{}; i < monsters.size(); i++){
+        if (choice == monsters[i].getName()) {
+            return monsters[i];
+        } 
+    }
+    std::cout<< " Invalid choice, try again " << std::endl;
+    }
+}
+
