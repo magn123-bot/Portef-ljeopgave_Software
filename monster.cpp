@@ -37,3 +37,7 @@ bool Monster::isAlive(){
 std::string Monster::getName(){
     return name;
 }
+
+int Monster::getHp(){
+    return hp;
+}
