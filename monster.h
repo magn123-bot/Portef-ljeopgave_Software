@@ -11,6 +11,7 @@ public:
     void getStatus();
     bool isAlive();
     std::string getName();
+    int getHp();
 
 private:
     std::string name;
