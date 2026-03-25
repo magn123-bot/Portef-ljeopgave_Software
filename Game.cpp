@@ -42,6 +42,9 @@ Monster& Game::chooseenemy(){
 void Game::playerTurn(){
     Monster& enemy = chooseenemy();
     Monster& my_Monster = player.chooseMonster();
+    if (!enemy.isAlive()){
+        std::cout<< "Your enemy is dead"<<std::endl;
+    }
     my_Monster.attack(enemy);
 }
 
