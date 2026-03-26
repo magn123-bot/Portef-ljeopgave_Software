@@ -38,24 +38,27 @@ Monster& Game::chooseenemy(){
     return enemy;
 
 }
-
+// tilføj en funktion der får alle levende monstrer, tjek om monsters listen er == levende monstrer listen
 void Game::playerTurn(){
+    if (enemy.isAlive() && alive)
     Monster& enemy = chooseenemy();
     Monster& my_Monster = player.chooseMonster();
     if (!enemy.isAlive()){
         std::cout<< "Your enemy is dead"<<std::endl;
     }
     my_Monster.attack(enemy);
+    std::cout<< "Attacked the enemy" << std::endl;
 }
 
 void Game::enemyTurn(){
-    int index = rand() % monsters;
-
-    enemy.attack(
+    Monster& m = player.randomMonster();
+    enemy.attack(m);
+    std::cout<< "enemy attacked: "<< m.getName() << std::endl;
 }
 
 
 void Game::fight(){
-    
-    std::cout<< "choose "
+    playerTurn();
+    enemyTurn();
+
 }

@@ -54,7 +54,7 @@ Monster& Player::randomMonster(){
     srand(time(0));
     int index = rand() % aliveMonsters.size();
     
-    return *aliveMonsters[index];
+    return  *aliveMonsters[index];
 
 }
 
