@@ -11,6 +11,8 @@ public:
     void removeMonster(Monster m);
     void addMonster(Monster m);
     Monster& chooseMonster();
+    Monster& Player::randomMonster();
+
 private:
         std::vector<Monster> monsters;
         std::string name;
