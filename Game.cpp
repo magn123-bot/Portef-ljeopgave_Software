@@ -49,7 +49,9 @@ void Game::playerTurn(){
 }
 
 void Game::enemyTurn(){
+    int index = rand() % monsters;
 
+    enemy.attack(
 }
 
 
