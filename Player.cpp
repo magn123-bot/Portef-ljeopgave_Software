@@ -42,3 +42,17 @@ Monster& Player::chooseMonster(){
     }
 }
 
+Monster& Player::randomMonster(){
+    srand(time(0));
+    std::vector<Monster*> aliveMonsters;
+    for (auto& m : monsters){
+        if (m.isAlive()){
+            aliveMonsters.push_back(&m);
+        }
+    }
+    int index = rand() % aliveMonsters.size();
+    
+    return *aliveMonsters[index];
+
+}
+
