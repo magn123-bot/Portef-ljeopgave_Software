@@ -12,10 +12,13 @@ public:
     void addMonster(Monster m);
     Monster& chooseMonster();
     Monster& Player::randomMonster();
+    std::vector<Monster*> Player::aliveAllyMonsters();
+
 
 private:
         std::vector<Monster> monsters;
         std::string name;
+        std::vector<Monster*> aliveMonsters;
 
 };
 #endif
