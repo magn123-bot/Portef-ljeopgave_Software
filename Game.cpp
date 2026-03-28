@@ -40,7 +40,7 @@ Monster& Game::chooseenemy(){
 }
 // tilføj en funktion der får alle levende monstrer, tjek om monsters listen er == levende monstrer listen
 void Game::playerTurn(){
-    if (enemy.isAlive() && alive)
+    if (enemy.isAlive() && aliveAllyMonsters().isAlive())
     Monster& enemy = chooseenemy();
     Monster& my_Monster = player.chooseMonster();
     if (!enemy.isAlive()){
