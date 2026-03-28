@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Monster.h"
 #include <vector>
+#include <iostream>
 
 Player::Player(std::string name){
 
@@ -61,8 +62,11 @@ Monster& Player::randomMonster(){
 
     void Player::removeDeadMonsters(){
         if (monsters.size() != aliveMonsters.size()){
-            for (auto const& i : monsters){
-
+            for (int i{}; i < monsters.size(); i++){
+                    if (!monsters[i].isAlive()) {
+                        monsters.erase(monsters.begin() + i);
+                    } 
+                }
         }
-        } std::cout<< 
+        std::cout<<"No dead monsters"<<std::endl;
     }
