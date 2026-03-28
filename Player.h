@@ -11,8 +11,8 @@ public:
     void removeMonster(Monster m);
     void addMonster(Monster m);
     Monster& chooseMonster();
-    Monster& Player::randomMonster();
-    std::vector<Monster*> Player::aliveAllyMonsters();
+    Monster& randomMonster();
+    std::vector<Monster*> aliveAllyMonsters();
     void removeDeadMonsters();
 
 
