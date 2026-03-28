@@ -13,6 +13,7 @@ public:
     Monster& chooseMonster();
     Monster& Player::randomMonster();
     std::vector<Monster*> Player::aliveAllyMonsters();
+    void removeDeadMonsters();
 
 
 private:

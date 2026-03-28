@@ -59,3 +59,7 @@ Monster& Player::randomMonster(){
         return aliveMonsters;
 
     }
+
+    void Player::removeDeadMonsters(){
+        
+    }
