@@ -42,7 +42,7 @@ Monster& Game::chooseenemy(){
 void Game::playerTurn(){
     if (enemy.isAlive() && aliveAllyMonsters().isAlive())
     Monster& enemy = chooseenemy();
-    Monster& my_Monster = player.chooseMonster();
+    Monster& my_Monster = chooseMonster();
     if (!enemy.isAlive()){
         std::cout<< "Your enemy is dead"<<std::endl;
     }
@@ -51,7 +51,7 @@ void Game::playerTurn(){
 }
 
 void Game::enemyTurn(){
-    Monster& m = player.randomMonster();
+    Monster& m = randomMonster();
     enemy.attack(m);
     std::cout<< "enemy attacked: "<< m.getName() << std::endl;
 }
