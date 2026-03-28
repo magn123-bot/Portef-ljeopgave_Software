@@ -44,11 +44,6 @@ Monster& Player::chooseMonster(){
 
 Monster& Player::randomMonster(){
     srand(time(0));
-    for (auto& m : monsters){
-        if (m.isAlive()){
-            aliveMonsters.push_back(&m);
-        }
-    }
     int index = rand() % aliveMonsters.size();
     
     return *aliveMonsters[index];
@@ -56,10 +51,18 @@ Monster& Player::randomMonster(){
 }
 
     std::vector<Monster*> Player::aliveAllyMonsters(){
+        for (auto& m : monsters){
+        if (m.isAlive()){
+            aliveMonsters.push_back(&m);
+        }}
         return aliveMonsters;
 
     }
 
     void Player::removeDeadMonsters(){
-        
+        if (monsters.size() != aliveMonsters.size()){
+            for (auto const& i : monsters){
+
+        }
+        } std::cout<< 
     }
