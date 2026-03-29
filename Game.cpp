@@ -40,25 +40,37 @@ Monster& Game::chooseenemy(){
 }
 // tilføj en funktion der får alle levende monstrer, tjek om monsters listen er == levende monstrer listen
 void Game::playerTurn(){
-    if (enemy.isAlive() && aliveAllyMonsters().isAlive())
-    Monster& enemy = chooseenemy();
-    Monster& my_Monster = chooseMonster();
+    if (player.aliveAllyMonsters().empty()){
+        std::cout<< "All your monsters is dead"<<std::endl;
+    }
     if (!enemy.isAlive()){
         std::cout<< "Your enemy is dead"<<std::endl;
     }
+    Monster& my_Monster = player.chooseMonster();
+    
     my_Monster.attack(enemy);
-    std::cout<< "Attacked the enemy" << std::endl;
+    std::cout<< "Attacked the enemy" << enemy.getName()<< std::endl;
 }
 
 void Game::enemyTurn(){
-    Monster& m = randomMonster();
-    enemy.attack(m);
-    std::cout<< "enemy attacked: "<< m.getName() << std::endl;
+    if (!enemy.isAlive()){
+        return;
+    }
+    if (player.aliveAllyMonsters().empty()){
+        std::cout<< "All your monsters is dead"<<std::endl;
+    }
+    Monster& target = player.randomMonster();
+
+    enemy.attack(target);
+    std::cout<< "enemy attacked: "<< target.getName() << std::endl;
 }
 
 
 void Game::fight(){
+    Monster& enemy = chooseenemy();
+
     playerTurn();
+    
     enemyTurn();
 
 }
