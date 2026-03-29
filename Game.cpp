@@ -67,10 +67,13 @@ void Game::enemyTurn(){
 
 
 void Game::fight(){
+
     Monster& enemy = chooseenemy();
 
-    playerTurn();
-    
-    enemyTurn();
+    while(enemy.isAlive() && !player.aliveAllyMonsters().empty()){
+        playerTurn();
+        enemyTurn();
+        
+    }
 
 }
