@@ -13,24 +13,30 @@ void Player::checkMonsters(){
     }
 }
 
-void Player::removeMonster(Monster m){
+void Player::removeMonster(const Monster& m){
     for (int i{}; i < monsters.size(); i++){
         if (monsters[i].getName() == m.getName()){
             monsters.erase(monsters.begin() + i);
+            break;
         }
     }
 
 }
 
 void Player::addMonster(Monster m){
-    monsters.push_back(m);
+    if (monsters.size() < 4){
+        monsters.push_back(m);
+    } 
+    std::cout<< "Choose a monster to remove: " << std::endl;
+    Monster& m = chooseMonster();
+    removeMonster(m);
 
 }
 
 Monster& Player::chooseMonster(){
     checkMonsters();
     while (true) {
-    std::cout<< "Choose a monster to fight: "<< std::endl;
+    std::cout<< "Choose a monster: "<< std::endl;
     std::string choice;
     std::cin>> choice;
  
