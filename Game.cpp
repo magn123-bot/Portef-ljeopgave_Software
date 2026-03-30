@@ -75,5 +75,15 @@ void Game::fight(){
         enemyTurn();
         
     }
+    if (!enemy.isAlive()){
+        player.addMonster(getOriginalEnemy());
+    }
 
 }
+
+Monster Game::getOriginalEnemy(){
+    for (Monster i : availableMonsters){
+        if (enemy.getName() == i.getName()){
+            return i;
+        }
+    }}

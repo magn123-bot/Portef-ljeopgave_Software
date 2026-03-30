@@ -22,6 +22,7 @@ private:
     Monster enemy;
     void playerTurn();
     void enemyTurn();
+    Monster getOriginalEnemy()
 };
 
 
