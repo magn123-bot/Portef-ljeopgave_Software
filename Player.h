@@ -8,7 +8,7 @@ class Player{
 public:
     Player(std::string name);
     void checkMonsters();
-    void removeMonster(Monster m);
+    void removeMonster(const Monster& m);
     void addMonster(Monster m);
     Monster& chooseMonster();
     Monster& randomMonster();
