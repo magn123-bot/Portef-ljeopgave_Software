@@ -8,6 +8,8 @@ void Game::startGame(){
     std::string name;
     std::cin>> name;
     player = Player(name);
+    player.addMonster(availableMonsters[0]);
+    player.addMonster(availableMonsters[0]);
 }
 
 void Game::stopGame(){
@@ -87,3 +89,8 @@ Monster Game::getOriginalEnemy(){
             return i;
         }
     }}
+
+void Game::run(){
+    startGame();
+    fight();
+}
