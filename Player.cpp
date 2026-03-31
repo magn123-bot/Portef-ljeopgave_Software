@@ -30,6 +30,7 @@ void Player::addMonster(Monster m){
     std::cout<< "Choose a monster to remove: " << std::endl;
     Monster& m = chooseMonster();
     removeMonster(m);
+    monsters.push_back(m);
 
 }
 
