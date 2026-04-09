@@ -23,7 +23,7 @@ private:
     void playerTurn();
     void enemyTurn();
     Monster getOriginalEnemy();
-    bool afterFight();
+    void afterFight();
     std::string awnser;
 };
 

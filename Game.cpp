@@ -90,20 +90,24 @@ Monster Game::getOriginalEnemy(){
     }}
 
 
-bool Game::afterFight(){
-    std::cout<< "Would you like to continue y/n: ";
+void Game::afterFight(){
+    std::cout<< "Would you like to continue [y/n]: ";
     std::cin>> awnser;
     if (awnser == "y"){
-        return true;
+        running = true;
     }else {
-        return false;
+        running = false;
     }
 }
 void Game::run(){
     startGame();
-    Monster& enemy = chooseenemy();
+
     while (running){
+        Monster& enemy = chooseenemy();
         fight();
+        afterFight();
     }
+
+
 
 }
