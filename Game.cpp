@@ -70,8 +70,6 @@ void Game::enemyTurn(){
 
 void Game::fight(){
 
-    Monster& enemy = chooseenemy();
-
     while(enemy.isAlive() && !player.aliveAllyMonsters().empty()){
         playerTurn();
         enemyTurn();
@@ -87,10 +85,25 @@ Monster Game::getOriginalEnemy(){
     for (Monster i : availableMonsters){
         if (enemy.getName() == i.getName()){
             return i;
+            running = false;
         }
     }}
 
+
+bool Game::afterFight(){
+    std::cout<< "Would you like to continue y/n: ";
+    std::cin>> awnser;
+    if (awnser == "y"){
+        return true;
+    }else {
+        return false;
+    }
+}
 void Game::run(){
     startGame();
-    fight();
+    Monster& enemy = chooseenemy();
+    while (running){
+        fight();
+    }
+
 }
