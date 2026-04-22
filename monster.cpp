@@ -1,6 +1,8 @@
 #include "Monster.h"
 #include <iostream>
 
+Monster::Monster() : name(""), hp(0), damage(0) {}
+
 Monster::Monster(std::string name, int hp, int damage)
     : name(name), hp(hp), damage(damage) {}
 
@@ -21,7 +23,7 @@ void Monster::takeDamage(int damage){
     }
 }
 
-void Monster::getStatus(){
+void Monster::getStatus() const{
     if (!isAlive()){
         std::cout<< name<< "Is dead"<< std::endl;
     }
@@ -29,15 +31,15 @@ void Monster::getStatus(){
 
 }
 
-bool Monster::isAlive(){
+bool Monster::isAlive() const{
     return hp > 0;
 }
 
 
-std::string Monster::getName(){
+std::string Monster::getName() const{
     return name;
 }
 
-int Monster::getHp(){
+int Monster::getHp() const{
     return hp;
 }

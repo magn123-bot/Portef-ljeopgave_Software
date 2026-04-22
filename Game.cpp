@@ -5,7 +5,9 @@
 
 
 void Game::startGame(){
+    enemies();
     std::string name;
+    std::cout<< "Input your characters name: " << std::endl;
     std::cin>> name;
     player = Player(name);
     player.addMonster(availableMonsters[0]);
@@ -36,14 +38,14 @@ Monster& Game::chooseenemy(){
         availableMonsters[i].getStatus();
     }    
     std::cin>> index;
-    Monster enemy = availableMonsters[index];
-    return enemy;
+    return availableMonsters[index];
 
 }
 // tilføj en funktion der får alle levende monstrer, tjek om monsters listen er == levende monstrer listen
 void Game::playerTurn(){
     if (player.aliveAllyMonsters().empty()){
         std::cout<< "All your monsters is dead"<<std::endl;
+        return;
     }
     if (!enemy.isAlive()){
         std::cout<< "Your enemy is dead"<<std::endl;
@@ -60,6 +62,7 @@ void Game::enemyTurn(){
     }
     if (player.aliveAllyMonsters().empty()){
         std::cout<< "All your monsters is dead"<<std::endl;
+        return;
     }
     Monster& target = player.randomMonster();
 
@@ -85,9 +88,11 @@ Monster Game::getOriginalEnemy(){
     for (Monster i : availableMonsters){
         if (enemy.getName() == i.getName()){
             return i;
-            running = false;
         }
-    }}
+    }
+    return availableMonsters[0];
+
+}
 
 
 void Game::afterFight(){
@@ -103,7 +108,8 @@ void Game::run(){
     startGame();
 
     while (running){
-        Monster& enemy = chooseenemy();
+        enemy = chooseenemy();
+        std::cout<< " You have choosen : "<< enemy.getName() << std::endl;
         fight();
         afterFight();
     }

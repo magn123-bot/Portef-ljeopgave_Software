@@ -23,9 +23,9 @@ void Player::removeMonster(const Monster& m){
 
 }
 
-void Player::addMonster(Monster m){
+void Player::addMonster(Monster addm){
     if (monsters.size() < 4){
-        monsters.push_back(m);
+        monsters.push_back(addm);
     } 
     std::cout<< "Choose a monster to remove: " << std::endl;
     Monster& m = chooseMonster();
