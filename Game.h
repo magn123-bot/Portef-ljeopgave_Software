@@ -1,13 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
 #include "Player.h"
+#include "monster.h"
 #include <vector>
 #include <string>
 
 
 
 
-class Game{
+class Game {
 public:
     void run();
 private:
@@ -17,7 +18,7 @@ private:
     void fight();
     Player player;
     bool running = true;
-    void Game::enemies();
+    void enemies();
     std::vector<Monster> availableMonsters;
     Monster enemy;
     void playerTurn();

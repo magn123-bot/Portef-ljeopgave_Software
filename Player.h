@@ -6,6 +6,7 @@
 
 class Player{
 public:
+    Player() = default;
     Player(std::string name);
     void checkMonsters();
     void removeMonster(const Monster& m);
